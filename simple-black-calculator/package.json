@@ -1,0 +1,19 @@
+{
+  "name": "simple-black-calculator",
+  "version": "1.0.0",
+  "description": "A simple calculator with a black background, built using HTML, CSS, and JavaScript.",
+  "main": "script.js",
+  "scripts": {
+    "start": "open index.html"
+  },
+  "keywords": [
+    "calculator",
+    "javascript",
+    "html",
+    "css",
+    "frontend",
+    "web"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT"
+}

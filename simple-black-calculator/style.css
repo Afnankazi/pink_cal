@@ -1,0 +1,107 @@
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a; /* Dark background for the page */
+    color: #fff;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 80px); /* 4 columns, 80px each */
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px); /* Display row, then 5 button rows */
+    background-color: #333; /* Slightly lighter dark for calculator body */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.display {
+    grid-column: 1 / -1; /* Span all 4 columns */
+    background-color: #000; /* Pure black for display */
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    font-size: 3em;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-bottom: 1px solid #444;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    border: 1px solid #444; /* Dark border between buttons */
+    cursor: pointer;
+    background-color: #505050; /* Dark grey for numbers */
+    color: #fff;
+    transition: background-color 0.2s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+.btn:hover {
+    background-color: #6a6a6a;
+}
+
+.btn.operator {
+    background-color: #ff9500; /* Orange for operators */
+    color: #fff;
+}
+
+.btn.operator:hover {
+    background-color: #ffa52b;
+}
+
+.btn.clear,
+.btn[data-action="negate"],
+.btn[data-action="percent"] {
+    background-color: #d4d4d2; /* Light grey for AC, +/-, % */
+    color: #1c1c1c;
+}
+
+.btn.clear:hover,
+.btn[data-action="negate"]:hover,
+.btn[data-action="percent"]:hover {
+    background-color: #e0e0de;
+}
+
+.btn.equals {
+    background-color: #ff9500;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn.equals:hover {
+    background-color: #ffa52b;
+}
+
+.btn.zero {
+    grid-column: span 2; /* Make zero button span two columns */
+}
+
+/* Apply border radius to the appropriate corner buttons */
+.btn[data-action="clear"] {
+    border-top-left-radius: 15px;
+}
+.btn[data-action="divide"] {
+    border-top-right-radius: 15px;
+}
+.btn.zero {
+    border-bottom-left-radius: 15px;
+}
+.btn.equals {
+    border-bottom-right-radius: 15px;
+}
